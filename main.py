@@ -1,4 +1,5 @@
 import os
+import os.path
 import time
 import torch
 import sys
@@ -25,17 +26,17 @@ run = wandb.init(
     # Set the wandb entity where your project will be logged (generally your team name).
     #entity="p-criaq",
     # Set the wandb project where this run will be logged.
-    project="Testing-Timm-Model",
+    project="Testing-ComputeCanada",
     # Track hyperparameters and run metadata.
     config={
         
         "learning_rate": 0.0001,
-        "architecture": "efficientvit_l3.r384_in1k",
+        "architecture": "resnet34",
         "dataset": "SpeedDataset",
-        "epochs": 400,
+        "epochs": 25,
     },
 )
-epochs = 100
+epochs = 25
 bsz = 32
 lr = 0.0001
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -47,15 +48,15 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 history = [] 
   # DATASET
 #v2.Grayscale(3)
-train_dataset = SpeedDataset(annotations_file='/mnt/c/Users/Ahmed/Downloads/Xplane_Project/SpeedDataset/Labels.csv',
-                                    img_dir='/mnt/c/Users/Ahmed/Downloads/Xplane_Project/SpeedDataset/train/original/frame',
+train_dataset = SpeedDataset(annotations_file='../../../../../scratch/SpeedDataset/Labels.csv',
+                                    img_dir='../../../../../scratch/SpeedDataset/train/original/frame',
                                      transform=transforms.Compose([
                                                
                                                
                                                v2.PILToTensor()])
                                           )
-val_dataset = SpeedDataset(annotations_file='/mnt/c/Users/Ahmed/Downloads/Xplane_Project/SpeedDataset/validation/ValLabels.csv',
-                                    img_dir='/mnt/c/Users/Ahmed/Downloads/Xplane_Project/SpeedDataset/validation/original/frame',
+val_dataset = SpeedDataset(annotations_file='../../../../../scratch/SpeedDataset/validation/ValLabels.csv',
+                                    img_dir='../../../../../scratch/SpeedDataset/validation/original/frame',
                                            transform=transforms.Compose([
                                         
                                               
