@@ -48,15 +48,15 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 history = [] 
   # DATASET
 #v2.Grayscale(3)
-train_dataset = SpeedDataset(annotations_file=  '/SpeedDataset/Labels.csv',
-                                    img_dir= '/SpeedDataset/train/original/frame',
+train_dataset = SpeedDataset(annotations_file=  '/home/o7ahmed/scratch/SpeedDataset/Labels.csv',
+                                    img_dir= '/home/o7ahmed/scratch/SpeedDataset/train/original/frame',
                                      transform=transforms.Compose([
                                                
                                                
                                                v2.PILToTensor()])
                                           )
-val_dataset = SpeedDataset(annotations_file=  '/SpeedDataset/validation/ValLabels.csv',
-                                    img_dir= '/SpeedDataset/validation/original/frame',
+val_dataset = SpeedDataset(annotations_file=  '/home/o7ahmed/scratch/SpeedDataset/validation/ValLabels.csv',
+                                    img_dir= '/home/o7ahmed/scratch/SpeedDataset/validation/original/frame',
                                            transform=transforms.Compose([
                                         
                                               
