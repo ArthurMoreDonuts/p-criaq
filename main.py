@@ -60,7 +60,7 @@ for x in models:
     # Set the wandb entity where your project will be logged (generally your team name).
     #entity="p-criaq",
     # Set the wandb project where this run will be logged.
-    project="Narval",
+    project="Nibi",
     # Track hyperparameters and run metadata.
     config={
         
@@ -138,5 +138,6 @@ for x in models:
     print("MSE: %.2f" % best_mse)
     print("RMSE: %.2f" % np.sqrt(best_mse))
     torch.save(model.state_dict(), '/home/o7ahmed/scratch/'+x+'SpeedBestModel.pth')
+    run.finish()
     
    
