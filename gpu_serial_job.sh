@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=def-yangw-ab
 #SBATCH --gpus-per-node=1
-#SBATCH --mem=4000M               # memory per node
-#SBATCH --time=0-12:00
+#SBATCH --mem=16000M               # memory per node
+#SBATCH --time=0-6:00
 python main.py
