@@ -60,7 +60,7 @@ for x in models:
     # Set the wandb entity where your project will be logged (generally your team name).
     #entity="p-criaq",
     # Set the wandb project where this run will be logged.
-    project="Testing-Timm-Model",
+    project="Narval",
     # Track hyperparameters and run metadata.
     config={
         
