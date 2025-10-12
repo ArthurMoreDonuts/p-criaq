@@ -52,7 +52,9 @@ val_dataset = SpeedDataset(annotations_file=  '/home/o7ahmed/scratch/SpeedDatase
 trn_loader = DataLoader(train_dataset, batch_size=bsz, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=bsz,
                         shuffle=False)
-models = [ 'efficientnet_b0.ra_in1k','efficientvit_b0.r224_in1k', 'nextvit_small.bd_in1k']
+#models = [ 'efficientnet_b0.ra_in1k','efficientvit_b0.r224_in1k', 'nextvit_small.bd_in1k']
+models = [ 'beit_base_patch16_224.in22k_ft_in22k', 'beitv2_base_patch16_224.in1k_ft_in22k', 'resnetv2_50x1_bit.goog_distilled_in1k',
+ 'cait_m36_384.fb_dist_in1k', 'coat_small.in1k',  'coatnet_1_rw_224.sw_in1k', 'convnext_base.fb_in22k',  'convnext_small.in12k', 'convnextv2_base.fcmae_ft_in1k',  'convit_base.fb_in1k',]
 # Start a new wandb run to track this script.
 
 for x in models:

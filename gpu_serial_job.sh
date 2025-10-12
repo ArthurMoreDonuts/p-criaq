@@ -2,7 +2,7 @@
 #SBATCH --account=def-yangw-ab
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=16000M               # memory per node
-#SBATCH --time=0-6:00
+#SBATCH --time=0-16:00
 #SBATCH --mail-user=ahmed_hani_dawoud@hotmail.com
 #SBATCH --mail-type=ALL
 python main.py
