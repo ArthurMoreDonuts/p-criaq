@@ -57,7 +57,7 @@ val_loader = DataLoader(val_dataset, batch_size=bsz,
  #'cait_m36_384.fb_dist_in1k', 'coat_small.in1k',  'coatnet_1_rw_224.sw_in1k', 'convnext_base.fb_in22k',  'convnext_small.in12k', 
  #'convnextv2_base.fcmae_ft_in1k',  'convit_base.fb_in1k',]
 
- models = [ 'convnext_small.in12k',
+models = [ 'convnext_small.in12k',
             'convnextv2_base.fcmae_ft_in1k',
             'convit_base.fb_in1k',
             'coat_small.in1k' ,
@@ -126,8 +126,7 @@ val_loader = DataLoader(val_dataset, batch_size=bsz,
             'vitamin_small_224.datacomp1b_clip',
             'volo_d1_224.sail_in1k',
             'xception41.tf_in1k',
-            'xcit_small_24_p16_224.fb_in1k',
- ]
+            'xcit_small_24_p16_224.fb_in1k',]
 
 # Start a new wandb run to track this script.
 
