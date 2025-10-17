@@ -52,25 +52,10 @@ val_dataset = SpeedDataset(annotations_file=  '/home/o7ahmed/scratch/SpeedDatase
 trn_loader = DataLoader(train_dataset, batch_size=bsz, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=bsz,
                         shuffle=False)
-#models = [ 'efficientnet_b0.ra_in1k','efficientvit_b0.r224_in1k', 'nextvit_small.bd_in1k','convnext_small.in12k', 'convnextv2_base.fcmae_ft_in1k',  'convit_base.fb_in1k',  'coat_small.in1k' ,  'resnetv2_50x1_bit.goog_distilled_in1k',  'convnext_base.fb_in22k',  'beit_base_patch16_224.in22k_ft_in22k',  'cspresnet50.ra_in1k', 'deit3_base_patch16_224.fb_in1k', 'deit_base_patch16_224.fb_in1k','densenet121.ra_in1k', 'dla34.in1k', 'dpn68.mx_in1k', 'edgenext_base.in21k_ft_in1k','efficientformer_l1.snap_dist_in1k','efficientformerv2_l.snap_dist_in1k', 'fastvit_ma36.apple_dist_in1k','focalnet_base_lrf.ms_in1k',  'gcvit_base.in1k', 'ghostnet_100.in1k', ]
+#models = [ 'efficientnet_b0.ra_in1k','efficientvit_b0.r224_in1k', 'nextvit_small.bd_in1k','convnext_small.in12k', 'convnextv2_base.fcmae_ft_in1k',  'convit_base.fb_in1k',  'coat_small.in1k' ,  'resnetv2_50x1_bit.goog_distilled_in1k',  'convnext_base.fb_in22k',  'beit_base_patch16_224.in22k_ft_in22k',  'cspresnet50.ra_in1k', 'deit3_base_patch16_224.fb_in1k', 'deit_base_patch16_224.fb_in1k','densenet121.ra_in1k', 'dla34.in1k', 'dpn68.mx_in1k', 'edgenext_base.in21k_ft_in1k','efficientformer_l1.snap_dist_in1k','efficientformerv2_l.snap_dist_in1k', 'fastvit_ma36.apple_dist_in1k','focalnet_base_lrf.ms_in1k',  'gcvit_base.in1k', 'ghostnet_100.in1k','ghostnetv2_100.in1k', 'gmlp_s16_224.ra3_in1k','hgnet_base.ssld_in1k','hrnet_w18.ms_aug_in1k','inception_next_base.sail_in1k','lambda_resnet26t.c1_in1k', 'levit_256.fb_dist_in1k','mambaout_base.in1k','maxvit_base_tf_224.in1k','mobilenetv1_100.ra4_e3600_r224_in1k','mobilenetv2_120d.ra_in1k','mobilenetv3_small_075.lamb_in1k','mobilenetv4_conv_medium.e500_r224_in1k','mobileone_s2.apple_in1k','mobilevit_s.cvnets_in1k', ]
 
 
-models = [  'ghostnetv2_100.in1k', 
-            'gmlp_s16_224.ra3_in1k',
-            'hgnet_base.ssld_in1k',
-            'hrnet_w18.ms_aug_in1k',
-            'inception_next_base.sail_in1k',
-            'lambda_resnet26t.c1_in1k', 
-            'levit_256.fb_dist_in1k',
-            'mambaout_base.in1k',
-            'maxvit_base_tf_224.in1k',
-            'mobilenetv1_100.ra4_e3600_r224_in1k',
-            'mobilenetv2_120d.ra_in1k',
-            'mobilenetv3_small_075.lamb_in1k',
-            'mobilenetv4_conv_medium.e500_r224_in1k',
-            'mobileone_s2.apple_in1k',
-            'mobilevit_s.cvnets_in1k',
-            'mobilevitv2_200.cvnets_in1k',
+models = [  'mobilevitv2_200.cvnets_in1k',
             'mvitv2_base.fb_in1k',
             'nasnetalarge.tf_in1k',
             'nest_base_jx.goog_in1k',
