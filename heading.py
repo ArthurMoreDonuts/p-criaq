@@ -56,12 +56,13 @@ val_loader = DataLoader(val_dataset, batch_size=bsz,
 
 
 models = [  
-            'maxvit_base_tf_224.in1k',
+            
             'mvitv2_base.fb_in1k',
             'nextvit_base.bd_in1k',
             'tresnet_l.miil_in1k',
             'volo_d1_224.sail_in1k',
             'xception41.tf_in1k',
+            'maxvit_base_tf_224.in1k',
             ]
 
 # Start a new wandb run to track this script.

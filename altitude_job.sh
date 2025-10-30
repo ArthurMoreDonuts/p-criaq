@@ -3,7 +3,7 @@
 #SBATCH --account=def-yangw-ab
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=32000M               # memory per node
-#SBATCH --time=0-24:00
+#SBATCH --time=02:00:00
 #SBATCH --mail-user=ahmed_hani_dawoud@hotmail.com
 #SBATCH --mail-type=ALL
 
