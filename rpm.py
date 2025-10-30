@@ -56,9 +56,7 @@ val_loader = DataLoader(val_dataset, batch_size=bsz,
 
 
 models = [  
-            'convnext_base.fb_in22k',
-            'dpn68.mx_in1k',
-            'focalnet_base_lrf.ms_in1k',
+           
             'mambaout_base.in1k',
             'mvitv2_base.fb_in1k',
             'nextvit_base.bd_in1k',
