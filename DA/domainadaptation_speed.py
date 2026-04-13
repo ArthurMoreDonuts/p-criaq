@@ -29,7 +29,7 @@ from SpeedDataset import SpeedDataset
 from WandbCallback import WandbCallback
 from skada.datasets import DomainAwareDataset
 
-epochs = 1
+epochs = 10
 batch_size = 32
 lr = 0.0001
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -77,7 +77,7 @@ models = ["convnext_small.in12k",]
 MSE = torch.nn.MSELoss()
 for x in models:
     model = timm.create_model(x, pretrained = True, num_classes= 1)
-    model.load_state_dict(torch.load(f"model\\{x}SpeedBestModel.pth", weights_only=True))         # your trained ConvNeXt
+    model.load_state_dict(torch.load(f"/home/o7ahmed/scratch/SpeedModels/{x}SpeedBestModel.pth", weights_only=True))         # your trained ConvNeXt
 model.eval()
 
 wrapper = ConvNextWrapper(model=model.cpu())
@@ -113,8 +113,9 @@ coralModel = DeepCoral(
     callbacks=[
         GradientNormClipping(gradient_clip_value=1.0),
         WandbCallback(
-            project_name="dan-training",
-            config={"trained on (1-5)": target, "method": "Deepcoral"}
+            project_name="Narval-DA",
+            config={"trained on (1-5)": target, "method": "Deepcoral"},
+            save_path=f"/home/o7ahmed/scratch/DAmodels/{x}_trained_on_{target}_Deepcoral_SpeedBestModel.pth"
         ),
     ],
 )
@@ -132,14 +133,15 @@ danModel = DAN(
     callbacks=[
         GradientNormClipping(gradient_clip_value=1.0),
         WandbCallback(
-            project_name="dan-training",
-            config={"trained on (1-5)": target, "method": "DAN"}
+            project_name="Narval-DA",
+            config={"trained on (1-5)": target, "method": "DAN"},
+            save_path=f"/home/o7ahmed/scratch/DAmodels/{x}_trained_on_{target}_Dan_SpeedBestModel.pth"
         ),
     ],
 )
 
-X_s, Y_s = extract_features(trn_loader)
-#X_s, Y_s = extract_features(full_trn_loader)
+#X_s, Y_s = extract_features(trn_loader)
+X_s, Y_s = extract_features(full_trn_loader)
 X_t, Y_t = extract_features(val_loader)
 
 
