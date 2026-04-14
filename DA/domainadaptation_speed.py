@@ -22,7 +22,6 @@ import timm
 import wandb
 from skada.deep import DAN
 from skorch.callbacks import GradientNormClipping
-from pytorch_adapt.utils.common_functions import batch_to_device
 from ConvNextWrapper import ConvNextWrapper
 from SpeedDataset import SpeedDataset
 from WandbCallback import WandbCallback
