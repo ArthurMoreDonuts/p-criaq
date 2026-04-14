@@ -14,7 +14,6 @@ import random
 import torch.optim as optim
 import torchvision.models as models
 from torch.utils.data import DataLoader, Subset
-from data import *
 from torchvision import datasets, transforms
 from torch import nn
 from skada.deep import DeepCoral
