@@ -74,7 +74,7 @@ full_trn_loader = DataLoader(source_dataset, batch_size=batch_size, shuffle=True
 models = ["convnext_small.in12k",]
 MSE = torch.nn.MSELoss()
 for x in models:
-    model = timm.create_model(x, pretrained = True, num_classes= 1)
+    model = timm.create_model(x, pretrained = False, num_classes= 1)
     model.load_state_dict(torch.load(f"/home/o7ahmed/scratch/SpeedModels/{x}SpeedBestModel.pth", weights_only=True))         # your trained ConvNeXt
 model.eval()
 
