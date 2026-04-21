@@ -9,7 +9,7 @@ class WandbCallback(Callback):
         self.project_name = project_name
         self.config = config or {}
         self.save_path = save_path
-        self.best_valid_loss = float("inf")
+        self.best_train_loss = float("inf")
         
     def on_train_begin(self, net, X=None, y=None, **kwargs):
         wandb.init(
@@ -32,19 +32,17 @@ class WandbCallback(Callback):
         
         # Log train loss if available
         if "train_loss" in history:
-            log_dict["train_loss"] = history["train_loss"]
-        
-        # Log valid loss if available (only if train_split is not None)
-        if "valid_loss" in history:
-            valid_loss = history["valid_loss"]
-            if valid_loss <  self.best_valid_loss:
-                self.best_valid_loss = valid_loss
+            train_loss = history["train_loss"]
+            
+            if train_loss <  self.best_train_loss:
+                self.best_train_loss = train_loss
                 self.best_weights = copy.deepcopy(
                     net.module_.base_module_.model.state_dict()
                 )
-                print(f"  → New best weights stored in memory (valid_loss={valid_loss:.4f})")
+                print(f"  → New best weights stored in memory (train_loss={train_loss:.4f})")
 
-            log_dict["valid_loss"] = valid_loss
+            log_dict["train_loss"] = train_loss
+      
 
         wandb.log(log_dict)
 
