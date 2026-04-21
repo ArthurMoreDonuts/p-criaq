@@ -14,5 +14,7 @@ source ~/py312/bin/activate
 # --- Navigate to Project Directory and Run Script
 echo "Changing to the project directory..."
 cd /home/o7ahmed/projects/def-yangw-ab/o7ahmed/p-criaq/p-criaq/DA/
+
+wandb offline
 python domainadaptation_speed.py
 
