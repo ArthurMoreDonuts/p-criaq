@@ -47,8 +47,9 @@ class WandbCallback(Callback):
         wandb.log(log_dict)
 
     def on_train_end(self, net, X=None, y=None, **kwargs):
+        # reminder to use self.best_weights instead of  net.module_.base_module_.model.state_dict()
         torch.save(
-                    self.best_weights ,
+                    net.module_.base_module_.model.state_dict() ,
                     self.save_path
                 )
         wandb.finish()
