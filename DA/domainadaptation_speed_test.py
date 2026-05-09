@@ -27,11 +27,11 @@ from SpeedDataset import SpeedDataset
 from WandbCallback import WandbCallback
 from skada.datasets import DomainAwareDataset
 
-epochs = 100
+epochs = 1000
 batch_size = 32
 lr = 0.0001
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-target = 5
+target = 4
 # Hold the best model
 
 history = [] 
@@ -53,8 +53,8 @@ target_dataset = SpeedDataset(annotations_file='/home/o7ahmed/scratch/CrossDatas
 
 
 
-target_subset_dataset = Subset(target_dataset,list(range(3330,4556)))
-#target_subset_dataset = Subset(target_dataset,list(range(1902,3330)))
+#target_subset_dataset = Subset(target_dataset,list(range(3330,4556)))
+target_subset_dataset = Subset(target_dataset,list(range(1902,3330)))
 #target_subset_dataset = Subset(target_dataset,list(range(1037,1902)))
 #target_subset_dataset = Subset(target_dataset,list(range(621,1037)))
 #target_subset_dataset = Subset(target_dataset,list(range(0,621)))
