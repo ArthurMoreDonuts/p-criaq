@@ -235,7 +235,7 @@ transform = transforms.Compose([
 
 
 model = ConvNextUDA(
-        backbone_name='convnext_base',
+        backbone_name='convnext_small.in12k_ft_in1k',
         pretrained_path="/home/o7ahmed/scratch/SpeedModels/convnext_small.in12kSpeedBestModel.pth",
         num_outputs=1,
     )
