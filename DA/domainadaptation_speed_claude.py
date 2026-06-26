@@ -71,7 +71,7 @@ class ConvNextUDA(nn.Module):
         super().__init__()
         self.backbone = timm.create_model(
             model_name,
-            pretrained=True,
+            pretrained=False,
             num_classes=0,
             global_pool="avg"
         )
