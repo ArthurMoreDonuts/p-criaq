@@ -150,7 +150,7 @@ def finetune_uda(model, source_loader, target_loader,
               f"λ={lam:.3f}")
 
 
-def load_pretrained_convnext(checkpoint_path, model_name="convnext_small.in12k_ft_in1k", num_outputs=1):
+def load_pretrained_convnext(checkpoint_path, model_name="convnext_small.in12k", num_outputs=1):
     """
     Load a previously trained ConvNext into the UDA wrapper, handling the
     most common checkpoint formats.
@@ -223,7 +223,7 @@ def load_pretrained_convnext(checkpoint_path, model_name="convnext_small.in12k_f
 
 
 
-epochs = 1000
+epochs = 300
 batch_size = 32
 lr = 0.0001
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
