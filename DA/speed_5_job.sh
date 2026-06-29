@@ -16,5 +16,5 @@ echo "Changing to the project directory..."
 cd /home/o7ahmed/projects/def-yangw-ab/o7ahmed/p-criaq/p-criaq/DA/
 
 wandb offline
-python domainadaptation_speed_5.py
+python uda_speed_claude_5.py
 
